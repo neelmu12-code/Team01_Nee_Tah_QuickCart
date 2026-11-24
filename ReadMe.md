@@ -1,6 +1,6 @@
 # QuickCart Software Testing and Quality Evaluation
 
-Team members: **Neel Upadhyay** and **Taha Qureshi**. Team number: **not yet assigned**.
+Team members: **Neel Upadhyay** and **Taha Qureshi**. Team number: **01**.
 
 This project evaluates the supplied QuickCart implementation against [PROJECT_SPECIFICATION.md](PROJECT_SPECIFICATION.md). Production Java content is unchanged from the starter. Correct specification regressions deliberately expose defects; they are kept separate from the passing baseline used by PIT.
 
