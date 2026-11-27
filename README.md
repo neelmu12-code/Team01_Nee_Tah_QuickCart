@@ -37,7 +37,7 @@ This command is expected to exit with code 1 on the unchanged implementation. Th
 | Historical coverage snapshot and interpretation | [evidence/coverage/README.md](evidence/coverage/README.md) |
 | Historical mutation before/after reports and survivor analysis | [evidence/mutation/README.md](evidence/mutation/README.md) |
 | Supplied historical AI prompts | [evidence/ai/prompts.md](evidence/ai/prompts.md) |
-| Eight original screenshots, displayed in order | [evidence/ai/screenshots/README.md](evidence/ai/screenshots/README.md) |
+| Original screenshots, grouped by prompt and output | [evidence/ai/screenshots/README.md](evidence/ai/screenshots/README.md) |
 | Visible historical AI output excerpts | [evidence/ai/relevant-output.md](evidence/ai/relevant-output.md) |
 | Newly recorded AI-generated candidate tests | [evidence/ai/candidate-output.md](evidence/ai/candidate-output.md) |
 | AI experiment design, review, measurements and limitations | [evidence/ai/evaluation.md](evidence/ai/evaluation.md) |

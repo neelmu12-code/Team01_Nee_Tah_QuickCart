@@ -36,3 +36,7 @@ mvn test "-Dgroups=known-defect" "-Dquickcart.excludedGroups=none" "-Djacoco.des
 ```
 
 The normal suite excludes the `known-defect` tag. The second command deliberately runs correct specification assertions that the unchanged implementation violates and is expected to fail. PIT also excludes those already-failing regression tests so its unmutated baseline can pass. Always distinguish a passing normal suite from compliance with every requirement. Production code has not been repaired to obtain a passing result.
+
+## Supplementary AI risk review
+
+Additional screenshots supplied November 27, 2026 prioritize payment/inventory consistency and report decline/retry, authorization-amount, gateway-exception, repeated-SKU, and exact-stock probes. The prompt and response are retained in [the AI evidence](ai/relevant-output.md), with [critical evaluation](ai/evaluation.md). They support the risk discussion, but their reported nine probes and six JUnit cases are not added to the verified suite counts because their code and raw results were not supplied. This addition does not establish that the strategy was documented before implementation.

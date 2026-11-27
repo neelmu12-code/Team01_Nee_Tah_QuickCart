@@ -1,10 +1,10 @@
 # AI-assisted testing: evidence and critical evaluation
 
-Recorded November 11, 2026. Team: Neel Upadhyay and Taha Qureshi; team number pending. This evaluation and the accompanying review were prepared with Codex assistance. Both team members remain responsible for checking, understanding, and explaining the submission. No historical human review or unrecorded AI conversation is asserted.
+Experiment recorded November 11, 2026; supplementary outline, risk-analysis, and historical audit screenshots added November 27, 2026. Team 01: Neel Upadhyay and Taha Qureshi. This evaluation and the accompanying review were prepared with Codex assistance. Both team members remain responsible for checking, understanding, and explaining the submission. No historical human review or unrecorded AI conversation is asserted.
 
-## 1. Historical planning assistance supplied by the team
+## 1. Original planning assistance supplied by the team: P1/P2
 
-Tool visible in the screenshots: ChatGPT; exact model/version and original conversation date are not visible. The [eight unmodified original screenshots](screenshots/README.md) are primary artifacts. [prompts.md](prompts.md) records both visible prompts, and [relevant-output.md](relevant-output.md) transcribes relevant visible output.
+Tool visible in the screenshots: ChatGPT; exact model/version and original conversation date are not visible. The original eight images (01-08) in [the screenshot index](screenshots/README.md) are primary artifacts for P1/P2. [prompts.md](prompts.md) records those visible prompts and the later additions, and [relevant-output.md](relevant-output.md) transcribes relevant visible output.
 
 The responses usefully identify the main testing techniques, evidence requirements, the importance of interpreting coverage/mutation scores, and the requirement to preserve the supplied production implementation. The proposed root-level Maven layout matches the assignment's layout, with optional planning files added. Its example test filenames are suggestions, not the final application's API or proof that runnable tests existed.
 
@@ -75,7 +75,27 @@ However, it did not account for the installed Java/Mockito compatibility problem
 
 We would not trust the generated tests without review and execution. Correct-looking source initially failed for an environmental reason, plausible assertions can duplicate existing evidence, and a test that names multiple requirements may not reach all its checks. The useful outcome is documented independent corroboration and a concrete compatibility/review lesson, with no unsupported improvement claim.
 
-## Reproduce
+## 7. Supplementary requirements and risk-analysis evidence: P4/P5
+
+The [additional screenshots](screenshots/README.md) supplied on November 27 preserve another requirements outline (P4) and a request to prioritize payment/ordering risks and create test cases (P5). The outline prompt was already in the folder and has been reused. These receipt dates do not establish the original conversation dates or model versions.
+
+P4 is useful planning/disclosure evidence, with substantial overlap with P1. It does not supply an additional executable experiment. P5 is more specific: it ranks payment/inventory consistency highest and reports decline/retry, gateway-exception, authorization-amount, repeated-SKU, and exact-stock scenarios. Those choices connect impact and checkout exposure to the test strategy, rather than prioritizing by line coverage alone.
+
+The decline/retry and exact-stock descriptions are consistent with the supplied `OrderService` source and already documented root defects. That source reserves inventory before authorizing payment and rejects stock equality. This is a source-level consistency check, not a new execution of the reported probes. The stated $114.08/$115.25 authorization comparison lacks full cart/discount inputs in the screenshot, so its exact oracle cannot be independently checked from the visible excerpt alone.
+
+The response reports four of nine probes passing, five specification failures, and six added JUnit cases. The named `QuickCart_Risk_Based_Testing.zip`, raw probe output, and test bodies were not supplied here; these counts remain **reported AI output**, separate from the measured 51/52-test comparison and 14 specification-test failures above. The response also explicitly says Maven was unavailable and that the full JUnit suite, JaCoCo, and PIT were not rerun. No new coverage gain, mutant kill, or locally integrated test is credited to P5.
+
+Review is still needed: the impact/exposure scales behind scores 16/12/8/6 are not shown; exception-handling and repeated-SKU contracts are not defined in detail by the behavioural specification; and the blanket label "five specification failures" requires checking against those limits. Prioritizing payment/inventory is sensible, but a small input space alone does not make constructor or model validation unimportant. The existing model and input-constraint tests remain part of the suite. This evidence supplements the risk rationale without replacing the verified experiment or asserting that the unprovided cases were adopted.
+
+## 8. Historical audit evidence: P6
+
+The three [P6 audit screenshots](screenshots/README.md) supplied November 27 show the November 11 request for a read-only repository audit, activity updates, and checklist excerpts. The audit correctly distinguishes strong automated testing and consistent coverage/mutation reports from actual specification compliance. It identifies missing AI documentation, a concise strategy, selected defect write-ups, and the required source layout as completion work at that point.
+
+Those findings are historical: later work added the AI records and controlled P3 comparison, consolidated the strategy/defect notes, and moved unchanged production code to the root-level source layout. The temporary-build access error shown in an activity update is an intermediate limitation, not a current failing test result; later measured runs are retained above. Evidence Sheet/video availability outside this repository cannot be established by the old screenshots, and those deliverables remain the team's separate work.
+
+P6 is evidence of AI-assisted review and follow-up prioritization. It is not a substitute for the P3 generation experiment or proof of additional test runs. Retaining the original images with this context avoids presenting the old "missing" statuses as current or claiming a new coverage/mutation improvement.
+
+## Reproduce the recorded P3 experiment
 
 From the root, run the two commands in [README.md](../../README.md) for `without-recorded-ai` and the default suite, saving each report before the next `clean`. Run `AIExperimentKnownDefectsTest` separately with `-Dquickcart.excludedGroups=none`; its two tests are expected to fail on the unchanged implementation. The broader `without-ai` profile is a different exclusion set and was not used for the comparison above.
 

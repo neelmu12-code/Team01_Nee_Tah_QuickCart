@@ -31,3 +31,33 @@ This message is the complete prompt for a new, prospective AI-assisted testing e
 The original path references above are preserved as prompt history. The final runnable project uses root-level `src/`.
 
 See [candidate-output.md](candidate-output.md) for the returned candidate code and explanation, and [evaluation.md](evaluation.md) for review decisions and measured results. Those files describe this new experiment, not the historical screenshot conversation.
+
+## Supplementary screenshots supplied November 27, 2026
+
+These additional ChatGPT excerpts document a requirements outline and a risk-based testing request. The original chat dates and exact model/version are not visible. P4/P5 are evidence identifiers, not a claim about when the original conversations took place. The existing outline-prompt screenshot has been reused; the response images and risk-based-testing prompt/output are indexed in [screenshots/README.md](screenshots/README.md).
+
+### P4 - Outline the project requirements
+
+Verbatim visible user prompt:
+
+> okay so first lets outline the project requirements
+
+Visible attachment: `ST_QA_QuickCart_Project_Instruc...` (PDF). The response outlines requirements and deliverables; this AI interpretation does not replace the supplied assignment instructions or behavioural specification.
+
+### P5 - Prioritize risks and create test cases
+
+Verbatim visible user prompt, including its spelling:
+
+> we must implement a risk based testing strategy , as this will be most suitable for this program and priritzing the important tasks such as payment service and order based service should recieve the most intense testing while leaving the ones with minimal input aside , conduct a test and determine highest risk and create the test cases
+
+The visible response reports nine probes and six added JUnit cases and shows a link named `QuickCart_Risk_Based_Testing.zip`. Only screenshots were supplied for this addition; that archive and its test bodies are not included. [relevant-output.md](relevant-output.md) retains the reported findings, and [evaluation.md](evaluation.md) explains their scope and verification limits. These counts do not change the recorded P3 experiment results.
+
+### P6 - Audit the code and existing evidence without changing it
+
+Three further screenshots supplied November 27 preserve the earlier Codex audit from this project conversation. The first screenshot shows "Wed, Nov 11 at 8:20 AM" and the attachment `ST_QA_QuickCart_Project_Instructions.pdf`. The exact model version is not visible.
+
+Verbatim visible user prompt, with line wrapping joined:
+
+> so look at our code do an audit dont change anything explain it to me and make sure whether we have everything or not ,look at the evidence folder and everything else
+
+The [audit screenshots](screenshots/README.md) contain the request, activity updates, and excerpts of the checklist response. They document the repository's historical state before the later AI-evidence and documentation/layout updates. The prompt is retained as historical input, not a new instruction to rerun the audit or modify tests. See [relevant-output.md](relevant-output.md) for the findings and their current context.
